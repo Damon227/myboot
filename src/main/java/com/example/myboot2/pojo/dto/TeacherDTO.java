@@ -49,7 +49,7 @@ public class TeacherDTO {
      * 教师副业
      */
     @NotNull(groups = {Save.class, Update.class})
-    @Job(groups = {Save.class, Update.class})
+    @Job(groups = {Save.class, Update.class}, value = {"1", "2", "3"})
     private String job;
 
     /**

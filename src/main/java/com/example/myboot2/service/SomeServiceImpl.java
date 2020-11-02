@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 //  使用生产配置
 @Service
 @Profile("prod")
@@ -21,5 +23,10 @@ public class SomeServiceImpl implements SomeService {
     @Override
     public void addTeacher(Teacher teacher) {
         dao.insert(teacher);
+    }
+
+    @Override
+    public List<Teacher> listTeachers() {
+        return dao.listTeachers();
     }
 }

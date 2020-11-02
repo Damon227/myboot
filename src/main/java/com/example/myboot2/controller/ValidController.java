@@ -1,11 +1,10 @@
 package com.example.myboot2.controller;
 
+import com.example.myboot2.enums.StatusEnum;
 import com.example.myboot2.pojo.dto.TeacherDTO;
 import com.example.myboot2.pojo.dto.ValidationList;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 /**
  * @author damon
@@ -20,7 +19,7 @@ public class ValidController {
      * @return String
      */
     @PostMapping("teacher")
-    public @ResponseBody String SaveTeacher(@RequestBody @Validated(TeacherDTO.Save.class) TeacherDTO teacherDTO){
+    public @ResponseBody String saveTeacher(@RequestBody @Validated(TeacherDTO.Save.class) TeacherDTO teacherDTO){
         return "save teacher";
     }
 
@@ -30,17 +29,28 @@ public class ValidController {
      * @return String
      */
     @PutMapping("teacher")
-    public @ResponseBody String UpdateTeacher(@RequestBody @Validated(TeacherDTO.Update.class) TeacherDTO teacherDTO){
+    public @ResponseBody String updateTeacher(@RequestBody @Validated(TeacherDTO.Update.class) TeacherDTO teacherDTO){
+
+        String desc = getDesc(null);
+        System.out.printf(desc);
+
         return "update teacher";
     }
 
     /**
      * 批量更新教师信息
-     * @param teacherDTOS 教师信息集合
+     * @param dtos 教师信息集合
      * @return String
      */
     @PutMapping("teachers")
-    public @ResponseBody String UpdateTeachers(@RequestBody @Validated(TeacherDTO.Update.class) ValidationList<TeacherDTO> teacherDTOS){
+    public @ResponseBody String updateTeachers(@RequestBody @Validated(TeacherDTO.Update.class) ValidationList<TeacherDTO> dtos){
         return "update teachers";
+    }
+
+    private String getDesc(StatusEnum statusEnum){
+        if(statusEnum == null){
+            return "null";
+        }
+        return statusEnum.getDesc();
     }
 }

@@ -86,17 +86,32 @@
             <artifactId>druid</artifactId>
             <version>1.1.12</version>
         </dependency>
-        <dependency>
-            <groupId>com.ycm</groupId>
-            <artifactId>spring-boot-starter-wrap3</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.ycm</groupId>-->
+<!--            <artifactId>spring-boot-starter-wrap3</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
 <!--        参数校验-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>6.0.1.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.4.6</version>
         </dependency>
     </dependencies>
 

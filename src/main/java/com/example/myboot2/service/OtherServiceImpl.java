@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 //  使用开发配置
 @Service
 @Profile("dev")
@@ -35,5 +37,10 @@ public class OtherServiceImpl implements SomeService {
         }
 
         teacherDao.insert(teacher2);
+    }
+
+    @Override
+    public List<Teacher> listTeachers() {
+        return teacherDao.listTeachers();
     }
 }
